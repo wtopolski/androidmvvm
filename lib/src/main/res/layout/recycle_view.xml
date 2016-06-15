@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.github.wtopolski.libmvvm.viewmodel.RecycleViewModel"/>
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        bind:fixedSize="@{viewModel.fixedSize}"
+        bind:itemAnimator="@{viewModel.itemAnimator}"
+        bind:layoutManager="@{viewModel.layoutManager}"
+        bind:adapter="@{viewModel.adapter}"/>
+
+</layout>

@@ -8,146 +8,178 @@
 
         <variable
             name="viewModel"
-            type="pogadanka.androidmvvm.viewmodel.ColorFormViewModel" />
+            type="com.github.wtopolski.mvvmsampleapp.viewmodel.ColorFormViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_vertical_margin"
+        android:fillViewport="true"
         tools:context=".controller.ColorFormActivity">
 
-        <include
-            layout="@layout/progress_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            bind:viewModel="@{viewModel.progress}" />
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
+            <include
+                layout="@layout/progress_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                bind:viewModel="@{viewModel.progress}" />
 
-                <include
-                    layout="@layout/text_input_layout_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.name}" />
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                card_view:cardCornerRadius="4dp">
 
-                <include
-                    layout="@layout/text_input_layout_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.description}" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical">
-
-                <include
-                    layout="@layout/text_caption_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.redDesc}"
-                    bind:textColor="@{@color/red}" />
-
-                <include
-                    layout="@layout/seekbar_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.red}" />
-
-                <include
-                    layout="@layout/text_caption_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.greenDesc}"
-                    bind:textColor="@{@color/green}" />
-
-                <include
-                    layout="@layout/seekbar_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.green}" />
-
-                <include
-                    layout="@layout/text_caption_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.blueDesc}"
-                    bind:textColor="@{@color/blue}" />
-
-                <include
-                    layout="@layout/seekbar_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.blue}" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                bind:backgroundColor="@{viewModel.color}">
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="15dp"
-                    android:textColor="@android:color/white"
-                    android:text="@{viewModel.color, default=fffffff}" />
+                    android:padding="8dp"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <include
+                        layout="@layout/text_input_layout_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.name}" />
 
-        </android.support.v7.widget.CardView>
+                    <include
+                        layout="@layout/text_input_layout_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.description}" />
 
-        <include
-            layout="@layout/button_view"
-            android:layout_marginTop="8dp"
-            android:layout_width="308dp"
-            android:layout_height="56dp"
-            bind:viewModel="@{viewModel.confirm}" />
+                </LinearLayout>
 
-        <include
-            layout="@layout/button_view"
-            android:layout_marginTop="8dp"
-            android:layout_width="308dp"
-            android:layout_height="56dp"
-            bind:viewModel="@{viewModel.next}" />
+            </android.support.v7.widget.CardView>
 
-    </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.redDesc}"
+                        bind:textColor="@{@color/red}" />
+
+                    <include
+                        layout="@layout/seekbar_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.red}" />
+
+                    <include
+                        layout="@layout/text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.greenDesc}"
+                        bind:textColor="@{@color/green}" />
+
+                    <include
+                        layout="@layout/seekbar_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.green}" />
+
+                    <include
+                        layout="@layout/text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.blueDesc}"
+                        bind:textColor="@{@color/blue}"/>
+
+                    <include
+                        layout="@layout/seekbar_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        bind:viewModel="@{viewModel.blue}" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <include
+                        layout="@layout/coloration_seekbar_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        bind:viewModel="@{viewModel.coloration}" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@{viewModel.color}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="15dp"
+                        android:textColor="@android:color/white"
+                        android:text="@{viewModel.color, default=fffffff}" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <include
+                layout="@layout/button_view"
+                android:layout_marginTop="8dp"
+                android:layout_width="308dp"
+                android:layout_height="56dp"
+                bind:viewModel="@{viewModel.confirm}" />
+
+            <include
+                layout="@layout/button_view"
+                android:layout_marginTop="8dp"
+                android:layout_width="308dp"
+                android:layout_height="56dp"
+                bind:viewModel="@{viewModel.next}" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </layout>

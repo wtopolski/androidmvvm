@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MVVMTextAppearance.Body1" parent="@style/Base.TextAppearance.AppCompat.Body1" />
+
+    <style name="MVVMTextAppearance.Body2" parent="@style/Base.TextAppearance.AppCompat.Body2" />
+
+    <style name="MVVMTextAppearance.Button" parent="@style/Base.TextAppearance.AppCompat.Button" />
+
+    <style name="MVVMTextAppearance.Caption" parent="@style/Base.TextAppearance.AppCompat.Caption" />
+
+    <style name="MVVMTextAppearance.Subhead" parent="@style/Base.TextAppearance.AppCompat.Subhead" />
+
 </resources>

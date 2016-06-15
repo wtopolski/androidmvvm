@@ -4,8 +4,9 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable name="viewModel" type="pogadanka.androidmvvm.viewmodel.ColorListItemViewModel" />
+        <variable name="viewModel" type="com.github.wtopolski.mvvmsampleapp.viewmodel.ColorListItemViewModel" />
         <variable name="textColor" type="Integer" />
+        <import type="android.support.v4.content.ContextCompat" />
     </data>
 
     <LinearLayout
@@ -19,7 +20,8 @@
             android:layout_height="200dp"
             android:paddingBottom="8dp"
             android:background="@android:color/white"
-            android:onClick="@{viewModel::onItemClick}"
+            android:clickable="true"
+            android:onClick="@{() -> viewModel.onItemClick()}"
             card_view:cardCornerRadius="4dp">
 
             <RelativeLayout
@@ -33,39 +35,36 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentLeft="true"
                     android:gravity="center"
-                    bind:backgroundColor="@{viewModel.color}">
+                    android:background="@{viewModel.color}">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
-                        android:textColor="#999999"
+                        android:textAppearance="@style/MVVMTextAppearance.Button"
+                        android:textColor="@{ContextCompat.getColor(context, textColor)}"
                         android:text="@{viewModel.color, default=fffffff}" />
 
                 </LinearLayout>
 
                 <include
                     android:id="@+id/description"
-                    layout="@layout/text_caption_view"
+                    layout="@layout/text_view"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="8dp"
                     android:layout_marginBottom="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.description}"
-                    bind:textColor="@{textColor}" />
+                    bind:viewModel="@{viewModel.description}" />
 
                 <include
-                    layout="@layout/text_subhead_view"
+                    layout="@layout/text_view"
                     android:layout_above="@id/description"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    bind:viewModel="@{viewModel.name}"
-                    bind:textColor="@{@android:color/darker_gray}" />
+                    bind:viewModel="@{viewModel.name}" />
 
                 <include
                     layout="@layout/checkbox_view"

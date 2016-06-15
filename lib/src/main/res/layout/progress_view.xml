@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.github.wtopolski.libmvvm.viewmodel.ProgressViewModel"/>
+    </data>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="@{viewModel.visibility ? View.VISIBLE : View.INVISIBLE}"
+        android:indeterminate="true" />
+
+</layout>
